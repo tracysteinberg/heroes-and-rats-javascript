@@ -1,7 +1,8 @@
- var Hero = function(name, health) {
+ var Hero = function(name, health, greeting) {
   this.name = name;
   this.health = 10;
   this.fav_food = [];
+  this.greeting = greeting;
   this.task_list = [];
 }
 
@@ -20,10 +21,10 @@ Hero.prototype = {
     },
 
 
-
-  //     displayProperties: function(){
-  //     return this.artist + " " + this.title + " " + this.genre + " " + this.price;
-  // });
+      talk: function(talk){
+      return this.greeting+" "+ this.name;
+     
+    },
 
 
 
