@@ -18,6 +18,7 @@ describe('hero', function () {
    it("should make sure properties are set for hero", function() {
      assert.strictEqual(hero.name, "BatMan");
      assert.strictEqual(hero.health, 10);
+     assert.deepStrictEqual(hero.fav_food, []);
      assert.deepStrictEqual(hero.task_list, []);
 //   });
   
