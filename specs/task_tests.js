@@ -1,7 +1,7 @@
 var assert = require('assert')
 var Hero = require('../hero.js')
 var Task = require('../task.js')
-var FavouriteFood = require('../food.js')
+var Food = require('../food.js')
 
 describe('task', function () {
 
@@ -11,35 +11,47 @@ describe('task', function () {
 
   beforeEach(function()  {
 
-  task1 = new Task(10, 10, 100, new Boolean(true));
-  
+  task1 = new Task(20, 30, 100, new Boolean(true));
+
+  task2 = new Task 
+        {
+        (20, 30, 100, new Boolean(true)),
+      
+        (10, 15, 25, new Boolean(false)),
+
+        (30, 25, 30, new Boolean(false)) 
+        }
+
   });
 
 
   it("should make sure task has difficulty", function() {
-    assert.strictEqual(task1.difficulty, 10);
+    assert.strictEqual(task1.difficulty, 20);
     })
 
   it("should make sure task has urgency", function() {
-    assert.strictEqual(task1.urgency, 10);
+    assert.strictEqual(task1.urgency, 30);
     })
 
-  it("should make sure task has urgency", function() {
+  it("should make sure task has reward", function() {
      assert.strictEqual(task1.reward, 100);
     })
 
   it("should make sure task can complete", function() {
-     assert.strictEqual(task1.complete, true);
+    task1.finish()
+    assert.deepStrictEqual(task1.complete, true);
    })
   
+   it("should sort tasks by difficulty", function() {
+    task2.sort()
+    // task2.sort(sort_by(difficulty, true, parseInt));
+    assert.deepStrictEqual(task2.difficulty, (30, 20, 10));
+   })
+
+
  }) 
 
   
-
- // it("should make sure properties are set for favourite food", function() {
- //    assert.strictEqual(fav_food.name, "Bananas");
- //    assert.strictEqual(fav_food.replenishment, 10);
- //    })
 
 
 

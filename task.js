@@ -1,19 +1,39 @@
  var Task = function(difficulty, urgency, reward, complete) {
-  this.difficulty = 10;
-  this.urgency = 10;
-  this.reward = 100;
-  this.complete = true;
+  this.difficulty = difficulty;
+  this.urgency = urgency;
+  this.reward = reward;
+  this.complete = false;
 }
 
-// RecordStore.prototype = {
-//    addToBalance: function(money) {
-//    this.balance += money;
-//    },
+Task.prototype.finish = function() {
+	this.complete = true;
+}
 
-//    addToInventory: function(record) {
-//    this.inventory.push(record);
-//    },
-// }
+
+Task.prototype.sort = function() {
+
+// difficulty of tasks
+
+var sort_by = function(field, reverse, primer){
+
+   var key = primer ? 
+       function(x) {return primer(x[field])} : 
+       function(x) {return x[field]};
+
+   reverse = !reverse ? 1 : -1;
+
+   return function (a, b, c) {
+       return a = key(a), b = key(b), c = key(c), reverse * ((a > b) - (b > a)- (a > c) - (b > c) - (c > a) - (c > b));
+     } 
+}
+ 
+
+
+
+
+}
+
+
 
 
 module.exports=Task;

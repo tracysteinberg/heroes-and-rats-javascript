@@ -12,7 +12,7 @@ describe('food', function () {
   beforeEach(function()  {
 
 
-   fav_food = new FavouriteFood("Bananas", 10);
+   fav_food = new FavouriteFood("Bananas", 20);
  
   
   });
@@ -24,7 +24,7 @@ describe('food', function () {
   })
 
   it("favourite food can replenish", function() {
-    assert.strictEqual(fav_food.replenishment, 10);
+    assert.strictEqual(fav_food.replenishment, 20);
 
   })
 

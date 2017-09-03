@@ -1,6 +1,6 @@
- var FavouriteFood = function(name, replenishment) {
+ var Food = function(name, replenishment) {
   this.name = name;
-  this.replenishment = 10;
+  this.replenishment = replenishment;
 }
 
 // RecordStore.prototype = {
@@ -14,4 +14,4 @@
 // }
 
 
-module.exports=FavouriteFood;
+module.exports = Food;
