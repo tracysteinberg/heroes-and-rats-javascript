@@ -22,8 +22,8 @@ var sort_by = function(field, reverse, primer){
 
    reverse = !reverse ? 1 : -1;
 
-   return function (a, b, c) {
-       return a = key(a), b = key(b), c = key(c), reverse * ((a > b) - (b > a)- (a > c) - (b > c) - (c > a) - (c > b));
+   return function (a, b) {
+       return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
      } 
 }
  
