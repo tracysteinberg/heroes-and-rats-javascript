@@ -44,7 +44,6 @@ describe('task', function () {
   
    it("should sort tasks by difficulty", function() {
     task2.sort()
-    // task2.sort(sort_by(difficulty, true, parseInt));
     assert.deepStrictEqual(task2.difficulty, (30, 20, 10));
    })
 
