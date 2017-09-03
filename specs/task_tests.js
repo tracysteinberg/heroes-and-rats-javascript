@@ -7,22 +7,25 @@ describe('task', function () {
 
   
   var task;
+  var task2
   
 
   beforeEach(function()  {
 
   task1 = new Task(20, 30, 100, new Boolean(true));
 
-  task2 = new Task 
+  var task2 = [
         {
-        (20, 30, 100, new Boolean(true)),
+         "difficulty": "20", "urgency": "30", "reward": "100"
+        }, {
       
-        (10, 15, 25, new Boolean(false)),
+         "difficulty": "10", "urgency": "15", "reward": "25" 
+        }, {
 
-        (30, 25, 30, new Boolean(false)) 
-        }
+         "difficulty": "30", "urgency": "25", "reward": "30" 
+        } 
 
-  });
+  ]});
 
 
   it("should make sure task has difficulty", function() {
@@ -44,7 +47,7 @@ describe('task', function () {
   
    it("should sort tasks by difficulty", function() {
     task2.sort()
-    assert.deepStrictEqual(task2.difficulty, (30, 20, 10));
+    assert.strictEqual(task2.difficulty, ("30", "20", "10"));
    })
 
 
